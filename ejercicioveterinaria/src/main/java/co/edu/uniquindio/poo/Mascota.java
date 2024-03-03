@@ -12,8 +12,8 @@ public record Mascota(String numeroIdentificacion, String nombre, String especie
         assert color != null & !color.isBlank(): "El color no puede ser null ni vacio";
         assert peso != null & !peso.isBlank(): "el peso no puede ser null ni vacio";
         }
-    
 }
+
 
 
 

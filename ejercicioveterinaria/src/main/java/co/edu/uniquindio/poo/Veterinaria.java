@@ -26,8 +26,8 @@ public class Veterinaria {
    }
 
    public void registrarMascota (Mascota mascota){
-    assert verificarNumeroIdentificacion(mascota.numeroIdentificacion())== false: "Ya existe una mascota con ese numero de identificacion "+mascota.numeroIdentificacion();
-    listaMascotas.add(mascota);
+        assert verificarNumeroIdentificacion(mascota.numeroIdentificacion())== false: "Ya existe una mascota con ese numero de identificacion "+mascota.numeroIdentificacion();
+         listaMascotas.add(mascota);
    }
 
 private boolean verificarNumeroIdentificacion(String numeroIdentificacion) {
