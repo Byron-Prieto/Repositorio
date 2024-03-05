@@ -58,6 +58,8 @@ public class VeterinariaTest {
 
         veterinaria.registrarMascota(mascota1);
 
+        veterinaria.registrarMascota(mascota2);
+
         assertThrows(Throwable.class, () ->  veterinaria.registrarMascota(mascota2));
 
         LOG.info("Finalización agregarMascotaRepetida");
