@@ -4,6 +4,6 @@ public class Carro extends Vehiculo {
 
     public Carro(String placa, String modelo){
 
-        super(placa, modelo);
+        super(placa, modelo, 2500);
     } 
 }

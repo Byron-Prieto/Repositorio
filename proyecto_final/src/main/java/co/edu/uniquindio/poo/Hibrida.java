@@ -4,6 +4,6 @@ public class Hibrida extends Moto {
 
     public Hibrida(String modelo, String placa, String velocidadMaxima){
 
-        super(velocidadMaxima, placa, modelo);
+        super(velocidadMaxima, placa, modelo, 1200);
     }
 }

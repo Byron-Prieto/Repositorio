@@ -2,25 +2,21 @@ package co.edu.uniquindio.poo;
 
 public class Posicion {
     
-    private final String fila;
-    private final String columna;
-    private Vehiculo vehiculo; 
+    private final int i;
+    private final int j;
+     
+    public Posicion(int i, int j){
 
-    public Posicion(String fila, String columna){
-
-        this.fila = fila;
-        this.columna = columna;
+        this.i = i;
+        this.j = j;
     }
 
-    public String getFila() {
-        return fila;
+    public int getI() {
+        return i;
     }
 
-    public String getColumna() {
-        return columna;
+    public int getJ() {
+        return j;
     }
 
-    public Vehiculo getVehiculo() {
-        return vehiculo;
-    } 
 }
