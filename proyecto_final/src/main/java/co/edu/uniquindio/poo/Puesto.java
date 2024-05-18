@@ -9,15 +9,15 @@ public class Puesto {
     private Vehiculo vehiculo;
     private LocalDateTime horaEntrada;
 
-    public LocalDateTime getHoraEntrada() {
-        return horaEntrada;
-    }
-
     public Puesto(Posicion posicion){
 
         this.posicion = posicion;
         this.vehiculo = null;
         this.horaEntrada = null;
+    }
+
+    public LocalDateTime getHoraEntrada() {
+        return horaEntrada;
     }
 
     public Posicion getPosicion() {
@@ -26,16 +26,6 @@ public class Puesto {
 
     public Vehiculo getVehiculo() {
         return vehiculo;
-    }
-
-    public double calcularTotalPagar() {
-        if (vehiculo != null && horaEntrada != null) {
-            LocalDateTime horaSalida = LocalDateTime.now();
-            Duration duracion = Duration.between(horaEntrada, horaSalida);
-            double horas = duracion.toMinutes() / 60.0;
-            return horas * vehiculo.getTarifaHora();
-        }
-        return 0;
     }
 
     public boolean estaOcupado() {
@@ -51,9 +41,26 @@ public class Puesto {
         }
     }
 
-    public void liberarPuesto() {
+    public Registro liberarPuesto(int numeroPuesto) {
+        if (this.vehiculo == null) {
+            System.out.println("El puesto ya está libre.");
+            return null;
+        }
+        LocalDateTime horaSalida = LocalDateTime.now();
+        double totalPagar = calcularTotalPagar(horaSalida);
+        Registro registro = new Registro(this.vehiculo, this.horaEntrada, horaSalida, totalPagar, numeroPuesto);
         this.vehiculo = null;
         this.horaEntrada = null;
+        return registro;
+    }
+
+    public double calcularTotalPagar(LocalDateTime horaSalida) {
+        if (vehiculo != null && horaEntrada != null) {
+            Duration duracion = Duration.between(horaEntrada, horaSalida);
+            double horas = duracion.toMinutes() / 60.0;
+            return horas * vehiculo.getTarifaHora();
+        }
+        return 0;
     }
 
 }
