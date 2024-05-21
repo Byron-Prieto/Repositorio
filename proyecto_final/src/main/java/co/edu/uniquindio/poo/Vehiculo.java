@@ -30,4 +30,8 @@ public abstract class Vehiculo {
     public double getTarifaHora() {
         return tarifaHora;
     }
+
+    public void setTarifaHora(double tarifaHora) {
+        this.tarifaHora = tarifaHora;
+    }
 }

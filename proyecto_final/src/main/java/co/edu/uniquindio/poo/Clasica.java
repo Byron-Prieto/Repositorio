@@ -2,8 +2,8 @@ package co.edu.uniquindio.poo;
 
 public class Clasica extends Moto {
 
-    public Clasica(String modelo, String placa, String velocidadMaxima){
+    public Clasica(String modelo, String placa, String velocidadMaxima, double tarifaHora){
 
-        super(velocidadMaxima, placa, modelo, 1500);
+        super(velocidadMaxima, placa, modelo, tarifaHora);
     }  
 }

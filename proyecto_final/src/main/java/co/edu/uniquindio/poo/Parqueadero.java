@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo;
 
+import java.time.LocalDate;
+import java.time.YearMonth;
 import java.util.ArrayList;
 
 public class Parqueadero {
@@ -85,6 +87,40 @@ public class Parqueadero {
             return null;
         }
         return puestos[numeroPuesto].getVehiculo().getPropietario();
+    }
+
+    public double generarReporteMensual(YearMonth mes) {
+        double totalMensual = 0;
+        for (Registro registro : historialVehiculos) {
+            if (registro.getHoraSalida() != null && YearMonth.from(registro.getHoraSalida()).equals(mes)) {
+                totalMensual += registro.getTotalPagar();
+            }
+        }
+        return totalMensual;
+    }
+
+    public String generarReporteDiario(LocalDate fecha) {
+        double totalDiario = 0;
+        double totalClasica = 0;
+        double totalHibrida = 0;
+        double totalCarro = 0;
+
+        for (Registro registro : historialVehiculos) {
+            if (registro.getHoraSalida() != null && registro.getHoraSalida().toLocalDate().equals(fecha)) {
+                totalDiario += registro.getTotalPagar();
+
+                if (registro.getVehiculo() instanceof Clasica) {
+                    totalClasica += registro.getTotalPagar();
+                } else if (registro.getVehiculo() instanceof Hibrida) {
+                    totalHibrida += registro.getTotalPagar();
+                } else if (registro.getVehiculo() instanceof Carro) {
+                    totalCarro += registro.getTotalPagar();
+                }
+            }
+        }
+
+        return String.format("Reporte Diario (%s):\nTotal Clasica: $%.2f\nTotal Hibrida: $%.2f\nTotal Carro: $%.2f\nTotal Recaudado: $%.2f",
+                             fecha, totalClasica, totalHibrida, totalCarro, totalDiario);
     }
 
 }
