@@ -9,12 +9,18 @@ public class Parqueadero {
     private final String nombre;
     private Puesto[] puestos;
     private ArrayList<Registro> historialVehiculos;
+    private double tarifaClasica;
+    private double tarifaHibrida;
+    private double tarifaCarro;
     
-    public Parqueadero(String nombre, int cantidadPuestos){
+    public Parqueadero(String nombre, int cantidadPuestos, double tarifaClasica, double tarifaHibrida, double tarifaCarro){
 
         this.nombre = nombre;
         puestos = new Puesto[cantidadPuestos];
         historialVehiculos = new ArrayList<>();
+        this.tarifaClasica = tarifaClasica;
+        this.tarifaHibrida = tarifaHibrida;
+        this.tarifaCarro = tarifaCarro;
 
         for (int k = 0; k < cantidadPuestos; k++) {
             int i = k / 10; 
@@ -121,6 +127,30 @@ public class Parqueadero {
 
         return String.format("Reporte Diario (%s):\nTotal Clasica: $%.2f\nTotal Hibrida: $%.2f\nTotal Carro: $%.2f\nTotal Recaudado: $%.2f",
                              fecha, totalClasica, totalHibrida, totalCarro, totalDiario);
+    }
+
+    public void setTarifaClasica(double tarifa) {
+        this.tarifaClasica = tarifa;
+    }
+
+    public void setTarifaHibrida(double tarifa) {
+        this.tarifaHibrida = tarifa;
+    }
+
+    public void setTarifaCarro(double tarifa) {
+        this.tarifaCarro = tarifa;
+    }
+
+    public double getTarifaClasica() {
+        return tarifaClasica;
+    }
+
+    public double getTarifaHibrida() {
+        return tarifaHibrida;
+    }
+
+    public double getTarifaCarro() {
+        return tarifaCarro;
     }
 
 }
