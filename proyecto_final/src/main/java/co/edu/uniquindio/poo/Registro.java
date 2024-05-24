@@ -8,7 +8,7 @@ public class Registro {
     private  Vehiculo vehiculo;
     private double totalPagar;
     private int numeroPuesto;
-    private Puesto puesto;
+    
 
     public Registro(Vehiculo vehiculo, LocalDateTime horaEntrada, LocalDateTime horaSalida, double totalPagar, int numeroPuesto){
 
@@ -25,9 +25,6 @@ public class Registro {
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
-    public Puesto getPuesto() {
-        return puesto;
-    }
 
     public LocalDateTime getHoraSalida() {
         return horaSalida;
@@ -43,6 +40,6 @@ public class Registro {
 
     @Override
     public String toString() {
-        return "Vehiculo: " + vehiculo.getPlaca() + vehiculo.getModelo() + vehiculo.getPropietario() + ", Hora Entrada: " + horaEntrada + ", Hora Salida: " + horaSalida + ", Total a Pagar: " + totalPagar;
+        return "Vehiculo: " + vehiculo.getPlaca() + vehiculo.getModelo() + vehiculo.getPropietario() + ", Hora Entrada: " + horaEntrada + ", Hora Salida: " + horaSalida + ", Total a Pagar: " + totalPagar + ", Puesto:" + numeroPuesto;
     }
 }

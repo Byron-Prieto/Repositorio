@@ -61,12 +61,11 @@ public class Parqueadero {
             return;
         }
         puestos[numeroPuesto].ocuparPuesto(vehiculo);
-        historialVehiculos.add(new Registro(vehiculo, puestos[numeroPuesto].getHoraEntrada(), null, 0, numeroPuesto));
     }
 
     public void liberarPuesto(int numeroPuesto) {
         if (numeroPuesto < 0 || numeroPuesto >= puestos.length) {
-            System.out.println("El número de puesto no es válido");
+            System.out.println("El número de puesto no es válido.");
             return;
         }
         Puesto puesto = puestos[numeroPuesto];
@@ -75,7 +74,7 @@ public class Parqueadero {
             historialVehiculos.add(registro);
             System.out.println("Total a pagar por el puesto número " + numeroPuesto + ": " + registro.getTotalPagar());
         } else {
-            System.out.println("El puesto ya está libre");
+            System.out.println("El puesto ya está libre.");
         }
     }
 

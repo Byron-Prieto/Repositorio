@@ -7,13 +7,13 @@ public abstract class Vehiculo {
     private Propietario propietario;
     private double tarifaHora;
 
-    public Vehiculo(String placa, String modelo, double tarifaHora){
+    public Vehiculo(String placa, String modelo, double tarifaHora, Propietario propietario){
 
         this.placa = placa;
         this.modelo = modelo;
         this.tarifaHora = tarifaHora;
     }
-
+        
     public String getPlaca() {
         return placa;
     }
