@@ -30,7 +30,7 @@ public class Parqueadero {
     
     }
 
-    public boolean verificarDisponibilidad(int numeroPuesto) {
+    public boolean verificarPuestoDisponible(int numeroPuesto) {
         
         if (numeroPuesto < 0 || numeroPuesto >= puestos.length) {
             System.out.println("El número de puesto no es válido.");
@@ -94,6 +94,14 @@ public class Parqueadero {
         return puestos[numeroPuesto].getVehiculo().getPropietario();
     }
 
+    public Posicion getPosicion(int numeroPuesto) {
+        if (numeroPuesto < 0 || numeroPuesto >= puestos.length) {
+            System.out.println("El número de puesto no es válido");
+            return null;
+        }
+        return puestos[numeroPuesto].getPosicion();
+    }
+
     public double generarReporteMensual(YearMonth mes) {
         double totalMensual = 0;
         for (Registro registro : historialVehiculos) {
@@ -126,6 +134,16 @@ public class Parqueadero {
 
         return String.format("Reporte Diario (%s):\nTotal Clasica: $%.2f\nTotal Hibrida: $%.2f\nTotal Carro: $%.2f\nTotal Recaudado: $%.2f",
                              fecha, totalClasica, totalHibrida, totalCarro, totalDiario);
+    }
+
+    public ArrayList<String> obtenerVehiculosRegistrados() {
+        ArrayList<String> vehiculos = new ArrayList<>();
+        for (int i = 0; i < puestos.length; i++) {
+            if (puestos[i] != null && puestos[i].estaOcupado()) {
+                vehiculos.add("Puesto " + i + " ocupado por: " + puestos[i].getVehiculo());
+            }
+        }
+        return vehiculos;
     }
 
     public void setTarifaClasica(double tarifa) {

@@ -19,4 +19,7 @@ public class Posicion {
         return j;
     }
 
+    public String toString() {
+        return "Posicion [i=" + i + ", j=" + j + "]";
+    }
 }

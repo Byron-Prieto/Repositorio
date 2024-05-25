@@ -21,4 +21,9 @@ public class Propietario {
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
+
+    @Override
+    public String toString() {
+        return "Propietario:" + nombre +  apellido;
+    }
 }

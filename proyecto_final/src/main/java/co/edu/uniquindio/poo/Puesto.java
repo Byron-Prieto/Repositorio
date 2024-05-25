@@ -1,9 +1,7 @@
 package co.edu.uniquindio.poo;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.Duration;
-import java.time.LocalDate;
 
 public class Puesto {
 
@@ -37,7 +35,7 @@ public class Puesto {
     public void ocuparPuesto(Vehiculo vehiculo) {
         if (this.vehiculo == null) {
             this.vehiculo = vehiculo;
-            this.horaEntrada = LocalDateTime.of(LocalDate.of(2024, 05, 01), LocalTime.of(11, 02, 01));
+            this.horaEntrada = LocalDateTime.now();
         } else {
             System.out.println("El puesto ya está ocupado");
         }
@@ -63,6 +61,10 @@ public class Puesto {
             return horas * vehiculo.getTarifaHora();
         }
         return 0;
+    }
+
+    public String toString() {
+        return "Puesto [posicion=" + posicion + ", vehiculo=" + (vehiculo != null ? vehiculo.getPlaca() : "vacío") + "]";
     }
 
 }

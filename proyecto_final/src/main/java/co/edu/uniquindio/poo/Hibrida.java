@@ -6,4 +6,8 @@ public class Hibrida extends Moto {
 
         super(velocidadMaxima, placa, modelo, tarifaHora, propietario);
     }
+
+    public String toString() {
+        return "Hibrida " + super.toString();
+    }
 }

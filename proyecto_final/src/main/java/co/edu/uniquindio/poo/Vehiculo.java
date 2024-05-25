@@ -12,6 +12,7 @@ public abstract class Vehiculo {
         this.placa = placa;
         this.modelo = modelo;
         this.tarifaHora = tarifaHora;
+        this.propietario = propietario;
     }
         
     public String getPlaca() {
@@ -24,8 +25,7 @@ public abstract class Vehiculo {
 
     public Propietario getPropietario() {
         return propietario;
-    } 
-    
+    }
     
     public double getTarifaHora() {
         return tarifaHora;
@@ -33,5 +33,10 @@ public abstract class Vehiculo {
 
     public void setTarifaHora(double tarifaHora) {
         this.tarifaHora = tarifaHora;
+    } 
+
+    public String toString() {
+        return this.getClass().getSimpleName() + " [placa=" + placa + ", modelo=" + modelo + ", tarifaHora=" + tarifaHora + ", propietario=" + propietario + "]";
     }
+    
 }

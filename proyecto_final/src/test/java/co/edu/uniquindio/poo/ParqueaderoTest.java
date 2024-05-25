@@ -103,7 +103,7 @@ public class ParqueaderoTest {
     }
 
     @Test
-    public void testPropietarioVehiculoEnPuesto() throws InterruptedException {
+    public void testPropietarioYVehiculoEnPuesto(){
         int cantidadPuestos = 10;
         double tarifaClasica = 10.0;
         double tarifaHibrida = 12.0;
@@ -112,14 +112,14 @@ public class ParqueaderoTest {
         Parqueadero parqueadero = new Parqueadero("", cantidadPuestos, tarifaClasica, tarifaHibrida, tarifaCarro);
 
         // Crear propietarios
-        Propietario propietario1 = new Propietario("Juan Perez", "12345678");
-        Propietario propietario2 = new Propietario("Maria Gomez", "87654321");
-        Propietario propietario3 = new Propietario("Luis Lopez", "11223344");
+        Propietario propietario1 = new Propietario("Juan", "Perez");
+        Propietario propietario2 = new Propietario("Maria", "Gomez");
+        Propietario propietario3 = new Propietario("Luis", "Lopez");
 
         // Crear vehículos con propietarios
-        Clasica clasica = new Clasica("", "MCL123", "", tarifaClasica, propietario1);
-        Hibrida hibrida = new Hibrida("", "MHB456", "", tarifaHibrida, propietario2);
-        Carro carro = new Carro("CAR789", "", tarifaCarro, propietario3);
+        Moto clasica = new Clasica("", "MCL123", "", tarifaClasica, propietario1);
+        Moto hibrida = new Hibrida("", "MHB456", "", tarifaHibrida, propietario2);
+        Vehiculo carro = new Carro("CAR789", "", tarifaCarro, propietario3);
 
         // Ocupar puestos con los vehículos
         parqueadero.ocuparPuesto(0, clasica);
@@ -130,8 +130,26 @@ public class ParqueaderoTest {
         assertEquals(propietario1, parqueadero.getPropietarioVehiculoEnPuesto(0));
         assertEquals(propietario2, parqueadero.getPropietarioVehiculoEnPuesto(1));
         assertEquals(propietario3, parqueadero.getPropietarioVehiculoEnPuesto(2));
-
-        System.out.println("Prueba de propietarios pasada exitosamente.");
+        assertEquals(clasica, parqueadero.getVehiculoEnPuesto(0));
+        assertEquals(hibrida, parqueadero.getVehiculoEnPuesto(1));
+        assertEquals(carro, parqueadero.getVehiculoEnPuesto(2));
     }
+
+    @Test
+    public void testObtenerPosicionYVerificarDisponibilidad(){
+
+        int cantidadPuestos = 30;
+        double tarifaClasica = 10.0;
+        double tarifaHibrida = 12.0;
+        double tarifaCarro = 15.0;
+
+        Parqueadero parqueadero = new Parqueadero("", cantidadPuestos, tarifaClasica, tarifaHibrida, tarifaCarro);
+        Propietario propietario1 = new Propietario("Juan", "Perez");
+        Moto clasica = new Clasica("", "MCL123", "", tarifaClasica, propietario1);
+        parqueadero.ocuparPuesto(0, clasica);
+
+        System.out.println(parqueadero.getPosicion(29));
+        System.out.println(parqueadero.verificarPuestoDisponible(0));
+    } 
 }
 

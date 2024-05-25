@@ -13,4 +13,9 @@ public abstract class Moto extends Vehiculo {
     public String getVelocidadMaxima() {
         return velocidadMaxima;
     }
+
+    public String toString() {
+        return super.toString() + ", velocidadMaxima=" + velocidadMaxima;
+    }
+    
 }

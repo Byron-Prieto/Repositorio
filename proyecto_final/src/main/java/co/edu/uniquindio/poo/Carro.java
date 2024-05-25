@@ -6,4 +6,8 @@ public class Carro extends Vehiculo {
 
         super(placa, modelo, tarifaHora, propietario);
     } 
+
+    public String toString() {
+        return "Carro " + super.toString();
+    }
 }
