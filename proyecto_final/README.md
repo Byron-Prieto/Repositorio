@@ -4,8 +4,9 @@ Descripciín basisca de su Proyecto de POO ...
 
 # Autores
 
-- Autor 1
-- Autor 2
+- Juan Daniel Vera
+- Andres Felipe Herrera
+- Byron Prieto
 
 # Herramientas
 
