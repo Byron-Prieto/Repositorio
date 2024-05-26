@@ -1,6 +1,6 @@
 # proyecto_final
 
-Descripciín basisca de su Proyecto de POO ...
+Proyecto final de la materia Programacion I
 
 # Autores
 
