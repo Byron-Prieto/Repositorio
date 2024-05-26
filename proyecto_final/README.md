@@ -5,7 +5,7 @@ Proyecto final de la materia Programacion I
 # Autores
 
 - Juan Daniel Vera
-- Andres Felipe Herrera
+- Andrés Felipe Herrera
 - Byron Prieto
 
 # Herramientas
