@@ -1,5 +1,12 @@
-package co.edu.uniquindio.poo;
+/**
+ * Clase para permitir la creación de puestos para el parqueadero
+ * @author Juan Daniel Vera, Andres Felipe Herrera y Byron Prieto
+ * @since 2024-05
+ * 
+ * Licencia GNU/GPL V3.0 (https://raw.githubusercontent.com/grid-uq/poo/main/LICENSE) 
+ */
 
+package co.edu.uniquindio.poo;
 import java.time.LocalDateTime;
 import java.time.Duration;
 

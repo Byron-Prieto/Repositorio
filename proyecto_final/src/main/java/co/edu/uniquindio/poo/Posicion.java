@@ -1,3 +1,11 @@
+/**
+ * Clase para permitir la creación de posiciones i, j para cada puesto del parqueadero
+ * @author Juan Daniel Vera, Andres Felipe Herrera y Byron Prieto
+ * @since 2024-05
+ * 
+ * Licencia GNU/GPL V3.0 (https://raw.githubusercontent.com/grid-uq/poo/main/LICENSE) 
+ */
+
 package co.edu.uniquindio.poo;
 
 public class Posicion {
