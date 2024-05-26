@@ -9,7 +9,7 @@ public class Registro {
     private double totalPagar;
     private int numeroPuesto;
     
-
+    //Método constructor
     public Registro(Vehiculo vehiculo, LocalDateTime horaEntrada, LocalDateTime horaSalida, double totalPagar, int numeroPuesto){
 
         this.horaEntrada = horaEntrada;
@@ -18,7 +18,8 @@ public class Registro {
         this.totalPagar = totalPagar;
         this.numeroPuesto = numeroPuesto;
     }
-
+    
+    //Métodos get  
     public LocalDateTime getHoraEntrada() {
         return horaEntrada;
     }
@@ -38,6 +39,7 @@ public class Registro {
         return numeroPuesto;
     }
 
+    //Método toString para retornar una representación de cadena del objeto
     @Override
     public String toString() {
         return "Vehiculo: " + vehiculo.getPlaca() + vehiculo.getModelo() + vehiculo.getPropietario() + ", Hora Entrada: " + horaEntrada + ", Hora Salida: " + horaSalida + ", Total a Pagar: " + totalPagar + ", Puesto:" + numeroPuesto;

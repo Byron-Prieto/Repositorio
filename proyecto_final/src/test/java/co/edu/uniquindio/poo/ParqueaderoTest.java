@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Test;
 
 public class ParqueaderoTest {
     private Parqueadero parqueadero;
-
+    
+    //Crear un parqueadero para las siguientes pruebas
     @BeforeEach
     public void setUp() {
         int cantidadPuestos = 30;
@@ -17,7 +18,8 @@ public class ParqueaderoTest {
         double tarifaCarro = 15.0;
         parqueadero = new Parqueadero("Parqueadero", cantidadPuestos, tarifaClasica, tarifaHibrida, tarifaCarro);
     }
-
+    
+    //Test para verificar que funcionen los métodos de ocupar y liberar puesto
     @Test
     public void testOcuparYLiberarPuesto() throws InterruptedException {
         Propietario propietario1 = new Propietario("Byron", "Prieto");
@@ -28,7 +30,8 @@ public class ParqueaderoTest {
         parqueadero.liberarPuesto(0);
         assertNull(parqueadero.getVehiculoEnPuesto(0));
     }
-
+    
+    //Test para verificar que funcione el método de generar un reporte diario
     @Test
     public void testGenerarReporteDiario() throws InterruptedException {
         Propietario propietario2 = new Propietario("Esteban", "Mendez");
@@ -58,7 +61,8 @@ public class ParqueaderoTest {
         assertTrue(reporte.contains("Total Hibrida"));
         assertTrue(reporte.contains("Total Carro"));
     }
-
+    
+    //Test para verificar que funcione el método para cambiar las tarifas
     @Test
     public void testCambiarTarifas() {
         parqueadero.setTarifaClasica(15.0);
@@ -69,7 +73,9 @@ public class ParqueaderoTest {
         assertEquals(18.0, parqueadero.getTarifaHibrida());
         assertEquals(20.0, parqueadero.getTarifaCarro());
     }
-
+    
+    //Test para verificar que se almacene el registro de todos los  
+    //vehículos que hayan usado el parqueadero en una lista
     @Test
     public void testHistorialVehiculos() throws InterruptedException {
         Propietario propietario5 = new Propietario("Jorge", "Torres");
@@ -87,7 +93,8 @@ public class ParqueaderoTest {
 
         assertEquals(2, parqueadero.getHistorialVehiculos().size());
     }
-
+    
+    //Test para verificar que funcione el método de generar un reporte mensual
     @Test
     public void testGenerarReporteMensual() throws InterruptedException {
         Propietario propietario7 = new Propietario("Tomas", "Moreno");
@@ -101,7 +108,9 @@ public class ParqueaderoTest {
         assertTrue(totalMensual > 0);
         System.out.println(totalMensual);
     }
-
+    
+    //Test para verificar que funcionen los métodos de obtener el
+    //vehículo y el propietario de un vehículo en un puesto
     @Test
     public void testPropietarioYVehiculoEnPuesto(){
         int cantidadPuestos = 10;
@@ -109,6 +118,7 @@ public class ParqueaderoTest {
         double tarifaHibrida = 12.0;
         double tarifaCarro = 15.0;
 
+        // Crear parqueadero
         Parqueadero parqueadero = new Parqueadero("", cantidadPuestos, tarifaClasica, tarifaHibrida, tarifaCarro);
 
         // Crear propietarios
@@ -134,7 +144,9 @@ public class ParqueaderoTest {
         assertEquals(hibrida, parqueadero.getVehiculoEnPuesto(1));
         assertEquals(carro, parqueadero.getVehiculoEnPuesto(2));
     }
-
+    
+    //Test para verificar que funcionen los métodos
+    //de obtener posición y verificar disponibilidad 
     @Test
     public void testObtenerPosicionYVerificarDisponibilidad(){
 
@@ -142,13 +154,23 @@ public class ParqueaderoTest {
         double tarifaClasica = 10.0;
         double tarifaHibrida = 12.0;
         double tarifaCarro = 15.0;
-
+        
+        // Crear parqueadero
         Parqueadero parqueadero = new Parqueadero("", cantidadPuestos, tarifaClasica, tarifaHibrida, tarifaCarro);
-        Propietario propietario1 = new Propietario("Juan", "Perez");
-        Moto clasica = new Clasica("", "MCL123", "", tarifaClasica, propietario1);
-        parqueadero.ocuparPuesto(0, clasica);
 
+        //Crear propietario
+        Propietario propietario1 = new Propietario("Juan", "Perez");
+
+        //Crear vehículo
+        Moto clasica = new Clasica("", "MCL123", "", tarifaClasica, propietario1);
+
+        //Ocupar puesto
+        parqueadero.ocuparPuesto(0, clasica);
+        
+        //Obtener la posición i, j de un puesto
         System.out.println(parqueadero.getPosicion(29));
+
+        //Verificar si un puesto está disponible
         System.out.println(parqueadero.verificarPuestoDisponible(0));
     } 
 }

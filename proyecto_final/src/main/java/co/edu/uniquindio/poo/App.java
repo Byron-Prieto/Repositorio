@@ -4,10 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.lang.Thread;
 
-/**
- * Hello world!
- *
- */
 public class App {
 
     public static void main(String[] args) {
@@ -62,7 +58,8 @@ public class App {
         double tarifaClasica = 10.0;
         double tarifaHibrida = 12.0;
         double tarifaCarro = 15.0;
-
+        
+        // Crear parqueadero
         Parqueadero parqueadero = new Parqueadero("Parqueadero", cantidadPuestos, tarifaClasica, tarifaHibrida, tarifaCarro);
 
         // Crear Propietarios
@@ -91,7 +88,8 @@ public class App {
         // Generar reporte diario
         LocalDate hoy = LocalDate.now();
         System.out.println(parqueadero.generarReporteDiario(hoy));
-
+        
+        //Ajustar las tarifas
         parqueadero.setTarifaClasica(12.0);
         parqueadero.setTarifaHibrida(14.0);
         parqueadero.setTarifaCarro(18.0);

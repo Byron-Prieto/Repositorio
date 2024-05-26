@@ -8,14 +8,16 @@ public class Puesto {
     private Posicion posicion;
     private Vehiculo vehiculo;
     private LocalDateTime horaEntrada;
-
+    
+    //Método constructor
     public Puesto(Posicion posicion){
 
         this.posicion = posicion;
         this.vehiculo = null;
         this.horaEntrada = null;
     }
-
+    
+    //Métodos get  
     public LocalDateTime getHoraEntrada() {
         return horaEntrada;
     }
@@ -27,11 +29,13 @@ public class Puesto {
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
-
+    
+    //Método para saber si un puesto está ocupado
     public boolean estaOcupado() {
         return vehiculo != null;
     }
-
+    
+    //Método para ocupar un puesto cuando un vehiculo vaya a usarlo
     public void ocuparPuesto(Vehiculo vehiculo) {
         if (this.vehiculo == null) {
             this.vehiculo = vehiculo;
@@ -40,7 +44,9 @@ public class Puesto {
             System.out.println("El puesto ya está ocupado");
         }
     }
-
+    
+    //Método para liberar un puesto cuando un vehiculo deje de usarlo,
+    //calcular el total a pagar y generar un registro del vehículo
     public Registro liberarPuesto(int numeroPuesto) {
         if (this.vehiculo == null) {
             System.out.println("El puesto ya está libre.");
@@ -53,7 +59,9 @@ public class Puesto {
         this.horaEntrada = null;
         return registro;
     }
-
+    
+    //Método para calcular el costo total de estacionamiento de un vehículo basado  
+    //en el tiempo de uso y la tarifa por hora correspondiente a su tipo
     public double calcularTotalPagar(LocalDateTime horaSalida) {
         if (vehiculo != null && horaEntrada != null) {
             Duration duracion = Duration.between(horaEntrada, horaSalida);
@@ -62,7 +70,9 @@ public class Puesto {
         }
         return 0;
     }
-
+    
+    //Método toString para retornar una representación de cadena del objeto
+    @Override
     public String toString() {
         return "Puesto [posicion=" + posicion + ", vehiculo=" + (vehiculo != null ? vehiculo.getPlaca() : "vacío") + "]";
     }

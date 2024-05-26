@@ -7,6 +7,7 @@ public abstract class Vehiculo {
     private Propietario propietario;
     private double tarifaHora;
 
+    //Método constructor
     public Vehiculo(String placa, String modelo, double tarifaHora, Propietario propietario){
 
         this.placa = placa;
@@ -14,7 +15,8 @@ public abstract class Vehiculo {
         this.tarifaHora = tarifaHora;
         this.propietario = propietario;
     }
-        
+
+    //Métodos get y set    
     public String getPlaca() {
         return placa;
     }
@@ -35,6 +37,8 @@ public abstract class Vehiculo {
         this.tarifaHora = tarifaHora;
     } 
 
+    //Método toString para retornar una representación de cadena del objeto
+    @Override
     public String toString() {
         return this.getClass().getSimpleName() + " [placa=" + placa + ", modelo=" + modelo + ", tarifaHora=" + tarifaHora + ", propietario=" + propietario + "]";
     }
