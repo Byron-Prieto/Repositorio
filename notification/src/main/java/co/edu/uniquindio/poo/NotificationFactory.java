@@ -5,10 +5,10 @@ public class NotificationFactory {
     public NotificationService CreateNotification(String type){
 
         switch (type.toLowerCase()) {
-            case "Email":
+            case "email":
                 return new EmailNotification();
             
-            case "SMS":
+            case "sms":
                 return new SmsNotification();
 
             default:
