@@ -154,7 +154,7 @@ public class ParqueaderoTest {
         //Generar reporte mensual
         YearMonth mesActual = YearMonth.now();
         double totalMensual = parqueadero.generarReporteMensual(mesActual);
-        assertTrue(totalMensual >= 0);
+        assertTrue(totalMensual > 0);
         System.out.println(totalMensual);
     }
     

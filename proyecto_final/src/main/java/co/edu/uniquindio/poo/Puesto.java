@@ -69,6 +69,11 @@ public class Puesto {
     
     //Método para calcular el costo total de estacionamiento de un vehículo basado  
     //en el tiempo de uso y la tarifa por hora correspondiente a su tipo
+    /**
+     * 
+     * @param horaSalida
+     * @return
+     */
     public double calcularTotalPagar(LocalDateTime horaSalida) {
         if (vehiculo != null && horaEntrada != null) {
             Duration duracion = Duration.between(horaEntrada, horaSalida);
