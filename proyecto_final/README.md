@@ -1,11 +1,12 @@
 # proyecto_final
 
-Descripciín basisca de su Proyecto de POO ...
+Proyecto final de la materia Programacion I
 
 # Autores
 
-- Autor 1
-- Autor 2
+- Juan Daniel Vera
+- Andrés Felipe Herrera
+- Byron Prieto
 
 # Herramientas
 

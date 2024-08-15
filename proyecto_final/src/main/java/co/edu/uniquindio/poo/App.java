@@ -1,5 +1,5 @@
 /**
- * Clase para verificar que para verificar que cada vehiculo puede ocupar
+ * Clase para verificar que cada vehiculo puede ocupar
  * solo un puesto, cada puesto puede estar ocupado solo por un vehículo y
  * para obtener la lista de vehículos que están ocupando un puesto
  * 
@@ -19,9 +19,9 @@ public class App {
         Parqueadero parqueadero = new Parqueadero("", 10, 10.0, 12.0, 15.0);
 
         // Crear propietarios
-        Propietario propietario1 = new Propietario("Juan Perez", "12345678");
-        Propietario propietario2 = new Propietario("Maria Gomez", "87654321");
-        Propietario propietario3 = new Propietario("Luis Lopez", "11223344");
+        Propietario propietario1 = new Propietario("Juan", " Perez");
+        Propietario propietario2 = new Propietario("Maria", "Gomez");
+        Propietario propietario3 = new Propietario("Luis", "Lopez");
 
         // Crear vehículos con propietarios
         Moto clasica = new Clasica("", "MCL123", "", 10.0, propietario1);
